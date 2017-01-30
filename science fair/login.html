@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+Username: <input type="text" id="myText" value="">
+<p></p>
+Password: <input type="password" id="myPass" value="">
+<p></p>
+
+<button onclick="myFunction()">login</button>
+
+<p id="demo"></p>
+<p id="result"></p>
+<script>
+
+function create() {
+    //<button onclick="create()">Create Username and Password</button>
+    var x1 = document.getElementById("myText").value;
+    
+    var y1 = document.getElementById("myPass").value;
+    
+    var user_store = ""
+    var password_store = ""
+    
+    if (typeof(Storage) !== "undefined") {
+    // Store
+    localStorage.setItem("username", x1);
+    // Retrieve
+    document.getElementById("result").innerHTML = localStorage.username;
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+
+if (typeof(Storage) !== "undefined") {
+    // Store
+    localStorage.setItem("password", y1);
+    // Retrieve
+    document.getElementById("result").innerHTML = localStorage.password;
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+
+}
+function myFunction() {
+    
+    
+    
+    var x = document.getElementById("myText").value;
+    
+    var y = document.getElementById("myPass").value;
+    
+    
+    if (x == localStorage.username && y == localStorage.password) 
+    {
+       window.open("https://projects-asharma2020.c9users.io/index.html");
+    }
+    
+      
+     
+ 
+    
+}
+</script>
+
+</body>
+</html>
